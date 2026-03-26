@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="BinaryTreeLib/BinaryTreeLib.csproj" />
+  <Project Path="HashTableConsole/HashTableConsole.csproj" />
+  <Project Path="LinkedListLib/LinkedListLib.csproj" />
+  <Project Path="QueueLib/QueueLib.csproj" />
+  <Project Path="StackLib/StackLib.csproj" />
+  <Project Path="Testing_Battle_Ground/Testing_Battle_Ground.csproj" />
+</Solution>
