@@ -16,6 +16,7 @@ public class SinglyLinkedList<T> : IEnumerable<T>
 
     }
 
+
     /// <summary>
     /// Initializes a new instance of the CustomLinkedList class that contains elements from the specified collection.
     /// </summary>
@@ -31,21 +32,25 @@ public class SinglyLinkedList<T> : IEnumerable<T>
         }
     }
 
+
     /// <summary>
     /// Gets the first node in the linked list, or null if the list is empty.
     /// </summary>
     public SinglyNode<T>? Head { get; private set; } = null;
 
+    
     /// <summary>
     /// Gets the first node in the linked list as a convenience property.
     /// </summary>
     /// <remarks>This property provides an alias to the Head property for improved readability.</remarks>
     public SinglyNode<T> First => Head;
 
+
     /// <summary>
     /// Gets the last node in the linked list, or null if the list is empty.
     /// </summary>
     public SinglyNode<T>? Tail { get; private set; } = null;
+    
 
     /// <summary>
     /// Gets the number of nodes in the linked list.
@@ -75,6 +80,7 @@ public class SinglyLinkedList<T> : IEnumerable<T>
         return false;
     }
 
+
     /// <summary>
     /// Finds and returns the first node containing the specified value.
     /// </summary>
@@ -96,6 +102,7 @@ public class SinglyLinkedList<T> : IEnumerable<T>
 
         return null;
     }
+
 
     /// <summary>
     /// Adds a new node with the specified value at the beginning of the linked list.
@@ -119,6 +126,7 @@ public class SinglyLinkedList<T> : IEnumerable<T>
         Count++;
     }
 
+
     /// <summary>
     /// Adds a new node with the specified value at the end of the linked list.
     /// </summary>
@@ -140,6 +148,7 @@ public class SinglyLinkedList<T> : IEnumerable<T>
 
         Count++;
     }
+
 
     /// <summary>
     /// Adds a new node with the specified value after the specified existing node.
@@ -168,6 +177,37 @@ public class SinglyLinkedList<T> : IEnumerable<T>
         Count++;
     }
 
+
+    /// <summary>
+    /// Inserts a new node with the specified <paramref name="value"/> immediately after the
+    /// given <paramref name="previousNode"/> in the list.
+    /// </summary>
+    /// <param name="previousNode">The node after which the new node will be inserted. Must not be <c>null</c>
+    /// and should belong to this list.</param>
+    /// <param name="value">The value to store in the newly inserted node.</param>
+    /// <exception cref="ArgumentNullException">Thrown when <paramref name="previousNode"/> is <c>null</c>.</exception>
+    /// <remarks>
+    /// The insertion is performed in O(1) time. If <paramref name="previousNode"/> is the current tail,
+    /// the newly inserted node becomes the new tail. The list's <see cref="Count"/> is incremented by one.
+    /// </remarks>
+    public void InsertAfter(SinglyNode<T> previousNode, T value)
+    {
+        ArgumentNullException.ThrowIfNull(previousNode);
+
+        SinglyNode<T> newNode = new(value);
+
+        newNode.Next = previousNode.Next;
+        previousNode.Next = newNode;
+
+        if (Tail == previousNode)
+        {
+            Tail = newNode;
+        }
+
+        Count++;
+    }
+
+
     /// <summary>
     /// Removes the first node from the linked list.
     /// </summary>
@@ -190,6 +230,7 @@ public class SinglyLinkedList<T> : IEnumerable<T>
 
         Count--;
     }
+
 
     /// <summary>
     /// Removes the last node from the linked list.
@@ -226,6 +267,7 @@ public class SinglyLinkedList<T> : IEnumerable<T>
 
         Count--;
     }
+
 
     /// <summary>
     /// Removes the first node containing the specified value from the linked list.
@@ -271,17 +313,19 @@ public class SinglyLinkedList<T> : IEnumerable<T>
         return false;
     }
 
+
     /// <summary>
     /// Removes the specified node from the linked list.
     /// </summary>
     /// <param name="node">The node to remove from the linked list.</param>
     public void Remove(SinglyNode<T> node)
     {
-        if (Head == null) return;
+        if (Head == null)
+            return;
 
         if (Head == node)
         {
-            Head = Head.Next;
+            RemoveFirst();
             return;
         }
 
@@ -292,12 +336,21 @@ public class SinglyLinkedList<T> : IEnumerable<T>
             if (current.Next == node)
             {
                 current.Next = node.Next;
+
+                if (node == Tail)
+                {
+                    Tail = current;
+                }
+
+                Count--;
+
                 return;
             }
 
             current = current.Next;
         }
     }
+
 
     /// <summary>
     /// Removes all nodes from the linked list.
@@ -308,6 +361,7 @@ public class SinglyLinkedList<T> : IEnumerable<T>
         Tail = null;
         Count = 0;
     }
+
 
     /// <summary>
     /// Returns an enumerator that iterates through the linked list.
@@ -324,6 +378,7 @@ public class SinglyLinkedList<T> : IEnumerable<T>
             current = current.Next;
         }
     }
+
 
     /// <summary>
     /// Returns an enumerator that iterates through the linked list.

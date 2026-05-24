@@ -1,10 +1,21 @@
 <Solution>
-  <Project Path="BinaryTreeLib/BinaryTreeLib.csproj" />
+  <Folder Name="/DataStructures/">
+    <Project Path="BinaryTreeLib/BinaryTreeLib.csproj" />
+    <Project Path="LinkedListLib/LinkedListLib.csproj" />
+    <Project Path="PriortyQueue/PriorityQueue.csproj" Id="6cece60d-eb5f-4644-a523-438d23b64b12" />
+    <Project Path="QueueLib/QueueLib.csproj" />
+    <Project Path="SetLib/SetLib.csproj" Id="b92343fe-9aa7-4a9f-b871-64248919a11a" />
+    <Project Path="StackLib/StackLib.csproj" />
+  </Folder>
+  <Folder Name="/Sorters/">
+    <Project Path="BubbleSort/BubbleSort.csproj" Id="bac6808e-39ff-488f-b6eb-90f0023e1334" />
+    <Project Path="InsertionSort/InsertionSort.csproj" Id="2258ede1-6f59-48e4-a1d3-35c85208f413" />
+    <Project Path="MergeSort/MergeSort.csproj" Id="d2b51f65-5946-48ad-8445-f4cfd27d7227" />
+    <Project Path="QuickSort/QuickSort.csproj" Id="1118473b-5c02-454d-8184-79871727c17e" />
+    <Project Path="SelectionSort/SelectionSort.csproj" Id="d50b254f-4ca5-4b03-8980-33166b806a2d" />
+  </Folder>
   <Project Path="HashTableConsole/HashTableConsole.csproj" />
-  <Project Path="LinkedListLib/LinkedListLib.csproj" />
-  <Project Path="QueueLib/QueueLib.csproj" />
-  <Project Path="SetLib/SetLib.csproj" Id="b92343fe-9aa7-4a9f-b871-64248919a11a" />
-  <Project Path="StackLib/StackLib.csproj" />
+  <Project Path="PostfixCalc/PostfixCalc.csproj" Id="727f4248-ea61-4dee-be6b-ceb20d4ccf64" />
   <Project Path="Testing_Battle_Ground/Testing_Battle_Ground.csproj" />
-  <Project Path="Unions/Unions.csproj" Id="3b077e92-0cd8-418c-893c-18ca409f89eb" />
+  <Project Path="Unions/UnionsWpf.csproj" Id="3b077e92-0cd8-418c-893c-18ca409f89eb" />
 </Solution>
