@@ -3,6 +3,8 @@
   <Project Path="HashTableConsole/HashTableConsole.csproj" />
   <Project Path="LinkedListLib/LinkedListLib.csproj" />
   <Project Path="QueueLib/QueueLib.csproj" />
+  <Project Path="SetLib/SetLib.csproj" Id="b92343fe-9aa7-4a9f-b871-64248919a11a" />
   <Project Path="StackLib/StackLib.csproj" />
   <Project Path="Testing_Battle_Ground/Testing_Battle_Ground.csproj" />
+  <Project Path="Unions/Unions.csproj" Id="3b077e92-0cd8-418c-893c-18ca409f89eb" />
 </Solution>
